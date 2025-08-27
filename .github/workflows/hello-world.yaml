@@ -31,4 +31,40 @@ jobs:
 
       # Runs our our "Hello world" shell script.
       - name: Runs the "Hello world" shell script
+        run: echo "Hello, world! This is my first GitHub Action!"
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "hello-world"
+  hello-world2:
+    needs: hello-world
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs our our "Hello world" shell script.
+      - name: Runs the "Hello world" shell script
+        run: echo "Hello, world! This is my second GitHub Action!"
+        run: eccho "Hello,"
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "hello-world"
+  hello-world3:
+    needs: hello-world2
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs our our "Hello world" shell script.
+      - name: Runs the "Hello world" shell script
         run: ./index.sh
+
