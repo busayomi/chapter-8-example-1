@@ -48,7 +48,7 @@ jobs:
 
       # Runs our our "Hello world" shell script.
       - name: Runs the "Hello world" shell script
-        run: eccho "Hello, world! This is my second GitHub Action!"
+        run: echo "Hello, world! This is my second GitHub Action!"
 
 
   # This workflow contains a single job called "hello-world"
